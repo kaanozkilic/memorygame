@@ -15,8 +15,7 @@ public class MemoryGame {
 
         int numOfNumbers = 7; // amount of nums that will be shown
         int numRange = 5; // range of nums (if its 10, then the range will be 1-10)
-        int showDelay = 4000; // time needed to memorize then nums (avoiding hardcode) - in miliseconds
-        float delaySecInFloat = showDelay / 1000;
+        int showSecDelay = 4; // time needed to memorize then nums (avoiding hardcode) - in seconds
         int countOfBlankLines = 10; // terminal clear
 
         ArrayList<Integer> nums = new ArrayList<Integer>();
@@ -31,12 +30,12 @@ public class MemoryGame {
         }
     
         // show the numbers and add delay
-        System.out.println("Try to remember following numbers. The numbers will be shown for " + delaySecInFloat + " seconds.");
+        System.out.println("Try to remember following numbers. The numbers will be shown for " + showSecDelay + " seconds.");
         for (Integer integer : nums) {
             System.out.print(integer + " ");
         }
 
-        Thread.sleep(showDelay);
+        Thread.sleep(showSecDelay * 1000);
 
         // clear terminal
         for (int i = 0; i < countOfBlankLines; i++) {
