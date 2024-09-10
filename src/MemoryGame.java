@@ -10,8 +10,6 @@ public class MemoryGame {
         Scanner sc = new Scanner(System.in);
 
         Random random = new Random();
-        int tempRandomNum;
-        int tempAnswer;
 
         int numOfNumbers = 7; // amount of nums that will be shown
         int numRange = 5; // range of nums (if its 10, then the range will be 1-10)
@@ -25,8 +23,7 @@ public class MemoryGame {
 
         // create random numbers
         for (int i = 0; i < numOfNumbers; i++) {
-            tempRandomNum = random.nextInt(numRange) + 1; // added +1 in order not to get 0 value
-            nums.add(tempRandomNum);
+            nums.add(random.nextInt(numRange) + 1); // added +1 in order not to get 0 value
         }
     
         // show the numbers and add delay
@@ -45,8 +42,7 @@ public class MemoryGame {
         // user input
         for (int i = 0; i < numOfNumbers; i++) {
             System.out.println("Type number " + (i+1) + ":");
-            tempAnswer = Integer.parseInt(sc.nextLine());
-            guesses.add(tempAnswer);
+            guesses.add(Integer.parseInt(sc.nextLine()));
         }
 
         // match and check
